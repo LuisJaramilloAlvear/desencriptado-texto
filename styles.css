@@ -128,7 +128,8 @@ button:hover {
 }
 
 #boton-copiar {
-    margin-top: 20px;
+    margin-top: 10px; /* Ajuste menor para alinear verticalmente con los otros botones */
+    margin-bottom: 16px; /* Espaciado uniforme hacia abajo */
     padding: 16px 24px;
     border: none;
     border-radius: 24px;
