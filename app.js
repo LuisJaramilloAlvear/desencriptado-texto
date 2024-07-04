@@ -52,13 +52,27 @@ function desencriptar(texto) {
 function mostrarMensaje(mensaje) {
     mensajeNoEncontrado.textContent = mensaje; // Actualizar el contenido del elemento con el mensaje
     imagen.classList.add('oculto'); // Ocultar la imagen
+    
+    // Ocultar el mensaje de ingreso
+    const mensajeIngreso = document.querySelector('.ingresar-mensaje');
+    mensajeIngreso.classList.add('oculto');
 }
 
-// Función para copiar el texto al cuadro de entrada
+
+
 function copiarTextoAMensaje() {
     const texto = mensajeNoEncontrado.textContent; // Obtener el texto del elemento mensajeNoEncontrado
-    textoEntrada.value = texto; // Colocar el texto en el cuadro de entrada
+    
+    // Usar la API del portapapeles para copiar el texto
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            alert('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('Error al copiar texto: ', err);
+        });
 }
+
 
 // Ocultar el texto del placeholder cuando el usuario comienza a escribir
 textoEntrada.addEventListener('focus', function() {
