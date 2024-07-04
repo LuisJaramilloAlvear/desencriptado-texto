@@ -1,6 +1,7 @@
-/* Estilos generales de la página */
+/* Importación de fuente */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Estilos generales del cuerpo */
 body {
     font-family: "Inter", sans-serif;
     display: flex;
@@ -11,22 +12,23 @@ body {
     height: 100vh;
 }
 
+/* Estilos del encabezado */
 header {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    padding: 10px 40px; /* Ajuste del padding para controlar el espacio alrededor del logo */
+    padding: 10px 40px;
     background-color: #f0f4f8;
 }
 
 .logo {
-    width: 120px;    /* Ajusta el ancho a 120px */
-    height: 48px;    /* Ajusta la altura a 48px */
-    padding: 0;      /* Ajusta el padding si es necesario */
-    margin-top: 40px;  /* Ajusta el margen superior a 40px */
-    margin-left: 40px; /* Ajusta el margen izquierdo a 40px */
+    width: 120px;
+    height: 48px;
+    margin-top: 40px;
+    margin-left: 40px;
 }
 
+/* Estilos del contenedor principal */
 .contenedor {
     display: flex;
     background: #fff;
@@ -40,26 +42,17 @@ header {
 
 .seccion-izquierda, .seccion-derecha {
     padding: 15px;
+    width: 50%;
 }
 
 .seccion-izquierda {
-    width: 50%;
     height: 944px;
-    top: 40px;
-    border-radius:20px ;
-    left: 1000px;
     border-right: 1px solid #e0e0e0;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
     color: #0A3871;
 }
 
 .seccion-derecha {
-    width: 50%;
     height: 755px;
-    top: 40px;
-    border-radius:20px ;
-    left: 1000px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -68,12 +61,13 @@ header {
     color: #333;
 }
 
+/* Estilos del textarea */
 textarea {
     width: 100%;
     height: 520px;
     border: none;
     border-radius: 4px;
-    padding: 100px;
+    padding: 16px;
     font-size: 16px;
     resize: none;
     box-sizing: border-box;
@@ -87,60 +81,98 @@ textarea {
 
 .contenedor-botones {
     margin-top: 32px;
-
-
+    
 }
 
-
-
+/* Estilos generales de los botones */
 button {
     margin-right: 10px;
-    padding: 24px 24px 24px 24px;
-    gap: 8px;
+    padding: 16px 24px;
     width: 328px;
     border: none;
     border-radius: 24px;
     background-color: #0A3871;
     color: #ffffff;
-    cursor: pointer; /*Cambia el cursor a una manito cuando paso sobre los botones*/
+    cursor: pointer;
     font-size: 1rem;
+    
+    
 }
 
-button:last-child {
+/* Estilos del último botón en cualquier contenedor */
+.seccion-derecha button:last-child {
     background-color: #d0d8e2;
     margin-right: 0;
     color: #0e000b;
+
 }
 
 button:hover {
-    opacity: 0.9;
+    opacity: 0.5;
+    transition: ease-in .4s;
+    
+    
 }
 
+/* Estilos específicos de la sección derecha */
 .mensaje-no-encontrado {
     font-size: 2.5rem;
     margin-top: 10px;
-    font-family: "Inter", sans-serif;
     font-weight: 700;
 }
 
-.ingresar-mensaje{
+.ingresar-mensaje {
     font-size: 1rem;
     margin-top: 10px;
-    font-family: "Inter", sans-serif;
     font-weight: 400;
 }
 
 #boton-copiar {
     margin-top: 20px;
-    padding: 24px 24px 24px 24px;
-    border:#0A3871;
+    padding: 16px 24px;
+    border: none;
     border-radius: 24px;
     cursor: pointer;
     font-size: 16px;
 }
 
 #boton-copiar:hover {
-    opacity: 0.9;
+    opacity: 0.2;
 }
 
+/* Estilos del pie de página */
+footer {
+    display: flex;
+    background-color: none;
+    padding: 20px 0;
+    text-align: center;
+    gap: 32px;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+}
 
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons li a {
+    color: #333;
+    font-size: 48px;
+    transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+    color: #007bff; /* Color al pasar el mouse */
+}
+
+/* Clase para ocultar elementos */
+.oculto {
+    display: none;
+}

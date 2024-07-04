@@ -4,6 +4,7 @@ const botonDesencriptar = document.getElementById('boton-desencriptar');
 const textoEntrada = document.getElementById('texto-entrada');
 const mensajeNoEncontrado = document.querySelector('.mensaje-no-encontrado');
 const botonCopiar = document.getElementById('boton-copiar');
+const botonLimpiar = document.getElementById('boton-limpiar');
 const imagen = document.getElementById('imagen'); // Referencia a la imagen
 
 // Evento para el botón de encriptar
@@ -11,6 +12,7 @@ botonEncriptar.addEventListener('click', function() {
     const texto = textoEntrada.value; // Obtener el texto del cuadro de entrada
     const textoEncriptado = encriptar(texto); // Encriptar el texto
     mostrarMensaje(textoEncriptado); // Mostrar el texto encriptado
+    
 });
 
 // Evento para el botón de desencriptar
@@ -25,10 +27,19 @@ botonCopiar.addEventListener('click', function() {
     copiarTextoAMensaje(); // Copiar el texto encriptado/desencriptado al cuadro de entrada
 });
 
+// Evento para el botón de limpiar
+botonLimpiar.addEventListener('click', function() {
+    textoEntrada.value = ''; // Limpiar el cuadro de entrada de texto
+    mensajeNoEncontrado.textContent = ''; // Limpiar el mensaje mostrado
+    imagen.classList.remove('oculto'); // Mostrar la imagen nuevamente (si es necesario)
+    window.scrollTo(0, 0); // Volver la página al principio
+});
+
 // Función para encriptar el texto
 function encriptar(texto) {
     // Lógica de encriptación, por ejemplo, ROT13
     return texto.replace(/[a-z]/g, c => String.fromCharCode((c.charCodeAt(0) - 97 + 13) % 26 + 97));
+    
 }
 
 // Función para desencriptar el texto
@@ -60,3 +71,4 @@ textoEntrada.addEventListener('blur', function() {
         textoEntrada.placeholder = 'Ingrese el texto aquí'; // Restaurar el placeholder
     }
 });
+

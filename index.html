@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXX" crossorigin="anonymous" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desincriptador de Texto</title>
@@ -15,11 +17,12 @@
         
         <div class="seccion-izquierda">
             <textarea id="texto-entrada" placeholder="Ingrese el texto aquí"></textarea>
-            <p class="nota">Solo letras minúsculas y sin acentos</p>
-            
+            <p class="nota"><i class="fas fa-exclamation-circle"></i> Solo letras minúsculas y sin acentos</p>
+
             <div class="contenedor-botones">
-                <button id="boton-encriptar">Encriptar</button>
-                <button id="boton-desencriptar">Desencriptar</button>
+                <button id="boton-encriptar">Encriptar!</button>
+                <button id="boton-desencriptar">Desencriptar!</button>
+                <button id="boton-limpiar">Limpiar!</button>
             </div>
        
         </div>
@@ -31,8 +34,18 @@
             <button id="boton-copiar">Copiar</button>
         </div>
     </div>
+
+    <footer class="footer">
+        <ul class="social-icons">
+            <li><a href="https://www.linkedin.com/in/luis-jaramillo-alvear/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="" target="_blank"><i class="fa-solid fa-briefcase"></i></a></li> <!-- Aqui debe ir el portafolio cuando lo termines! -->
+        </ul>
+        <p>| Luis Jaramillo Alvear |</p>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
+
 
 
