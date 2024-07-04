@@ -33,17 +33,21 @@ header {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 80%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 90%;
     margin-top: 20px;
 }
 
 .seccion-izquierda, .seccion-derecha {
-    padding: 20px;
+    padding: 15px;
 }
 
 .seccion-izquierda {
-    width: 60%;
+    width: 50%;
+    height: 944px;
+    top: 40px;
+    border-radius:20px ;
+    left: 1000px;
     border-right: 1px solid #e0e0e0;
     font-family: "Inter", sans-serif;
     font-weight: 400;
@@ -51,7 +55,11 @@ header {
 }
 
 .seccion-derecha {
-    width: 40%;
+    width: 50%;
+    height: 755px;
+    top: 40px;
+    border-radius:20px ;
+    left: 1000px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -62,10 +70,10 @@ header {
 
 textarea {
     width: 100%;
-    height: 150px;
-    border: 1px solid #e0e0e0;
+    height: 520px;
+    border: none;
     border-radius: 4px;
-    padding: 10px;
+    padding: 100px;
     font-size: 16px;
     resize: none;
     box-sizing: border-box;
@@ -78,14 +86,20 @@ textarea {
 }
 
 .contenedor-botones {
-    margin-top: 10px;
+    margin-top: 32px;
+
+
 }
+
+
 
 button {
     margin-right: 10px;
-    padding: 10px 20px;
+    padding: 24px 24px 24px 24px;
+    gap: 8px;
+    width: 328px;
     border: none;
-    border-radius: 15px;
+    border-radius: 24px;
     background-color: #0A3871;
     color: #ffffff;
     cursor: pointer; /*Cambia el cursor a una manito cuando paso sobre los botones*/
@@ -93,9 +107,9 @@ button {
 }
 
 button:last-child {
-    background-color: #D8DFE8;
+    background-color: #d0d8e2;
     margin-right: 0;
-    color: #0A3871;
+    color: #0e000b;
 }
 
 button:hover {
@@ -118,7 +132,7 @@ button:hover {
 
 #boton-copiar {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 24px 24px 24px 24px;
     border:#0A3871;
     border-radius: 24px;
     cursor: pointer;
@@ -129,6 +143,4 @@ button:hover {
     opacity: 0.9;
 }
 
-.oculto {
-    display: none;
-}
+
