@@ -85,4 +85,3 @@ textoEntrada.addEventListener('blur', function() {
         textoEntrada.placeholder = 'Ingrese el texto aquí'; // Restaurar el placeholder
     }
 });
-
