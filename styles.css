@@ -43,11 +43,13 @@ header {
     margin-top: 20px;
     padding: 20px;
     box-sizing: border-box; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 .seccion-izquierda, .seccion-derecha {
     padding: 32px;
-    width: 50%;
+    width: 45%;
     height: auto;
     
 }
@@ -66,6 +68,9 @@ header {
     justify-content: center;
     align-items: center;
     color: #333;
+    height: 60vh;
+    gap: 24px;
+
 }
 
 /* Estilos del textarea */
@@ -87,8 +92,7 @@ textarea {
 }
 
 .contenedor-botones {
-    display: flex;
-       
+    display: flex;       
 }
 
 /* Estilos generales de los botones */
@@ -135,7 +139,7 @@ button:hover {
 }
 
 #boton-copiar {
-    margin-top: 10px; /* Ajuste menor para alinear verticalmente con los otros botones */
+    
     margin-bottom: 16px; /* Espaciado uniforme hacia abajo */
     padding: 16px 24px;
     border: none;
@@ -186,12 +190,6 @@ footer {
 }
 
 
-@media (max-width: 768px) {
-    .contenedor {
-        width: 95%;
-        padding: 10px;
-    }
-}
 
 /*################# FORMATO PARA CELULARES ##############################*/
 
@@ -236,3 +234,41 @@ footer {
 
 
 /*################# FORMATO PARA TABLETAS ##############################*/
+
+@media (max-width: 769px) {
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+        align-items: center;
+        
+    }
+    .seccion-izquierda, .seccion-derecha {
+        border:none;
+        width: auto;
+        height: auto;
+        align-items: center;
+    }
+
+    button {
+        width: 150px;
+        gap: 16px;
+    }
+
+    .contenedor-botones{
+        display: flex;
+        padding: 10px;
+
+    }
+
+    body{
+        padding: 5px;
+    }
+    footer{
+        font-size: 10px;
+        .social-icons li a{
+            font-size: 32px;
+        }
+    }
+}
