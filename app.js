@@ -12,7 +12,6 @@ botonEncriptar.addEventListener('click', function() {
     const texto = textoEntrada.value; // Obtener el texto del cuadro de entrada
     const textoEncriptado = encriptar(texto); // Encriptar el texto
     mostrarMensaje(textoEncriptado); // Mostrar el texto encriptado
-    
 });
 
 // Evento para el botón de desencriptar
@@ -40,15 +39,20 @@ botonLimpiar.addEventListener('click', function() {
 
 // Función para encriptar el texto
 function encriptar(texto) {
-    // Lógica de encriptación, por ejemplo, ROT13
-    return texto.replace(/[a-z]/g, c => String.fromCharCode((c.charCodeAt(0) - 97 + 13) % 26 + 97));
-    
+    return texto.replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
 }
 
 // Función para desencriptar el texto
 function desencriptar(texto) {
-    // Lógica de desencriptación, por ejemplo, ROT13
-    return texto.replace(/[a-z]/g, c => String.fromCharCode((c.charCodeAt(0) - 97 + 13) % 26 + 97));
+    return texto.replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
 }
 
 // Función para mostrar el mensaje encriptado/desencriptado
@@ -61,21 +65,32 @@ function mostrarMensaje(mensaje) {
     mensajeIngreso.classList.add('oculto');
 }
 
-
-
 function copiarTextoAMensaje() {
     const texto = mensajeNoEncontrado.textContent; // Obtener el texto del elemento mensajeNoEncontrado
     
-    // Usar la API del portapapeles para copiar el texto
-    navigator.clipboard.writeText(texto)
-        .then(() => {
-            alert('Texto copiado al portapapeles');
-        })
-        .catch(err => {
-            console.error('Error al copiar texto: ', err);
-        });
+    // Crear un elemento de texto temporal
+    const textArea = document.createElement('textarea');
+    textArea.value = texto;
+    
+    // Añadir el área de texto al cuerpo del documento
+    document.body.appendChild(textArea);
+    
+    // Seleccionar el contenido del área de texto
+    textArea.select();
+    
+    // Copiar el texto al portapapeles usando la API moderna
+    navigator.clipboard.writeText(textArea.value).then(() => {
+        // Mantener el texto seleccionado (opcional)
+        textoEntrada.focus();
+        textoEntrada.value = texto;
+        textoEntrada.select();
+    }).catch(err => {
+        console.error('Error al copiar texto: ', err);
+    });
+    
+    // Remover el área de texto temporal
+    document.body.removeChild(textArea);
 }
-
 
 // Ocultar el texto del placeholder cuando el usuario comienza a escribir
 textoEntrada.addEventListener('focus', function() {
