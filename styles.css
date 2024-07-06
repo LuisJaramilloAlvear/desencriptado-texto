@@ -110,7 +110,7 @@ button {
     
 }
 
-/* Estilos del último botón en cualquier contenedor */
+/* Estilos del último botón en cualquier contenedor - Estilo del boton Copiar */
 .seccion-derecha button:last-child {
     background-color: #d0d8e2;
     margin-right: 0;
