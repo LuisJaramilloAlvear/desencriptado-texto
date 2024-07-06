@@ -30,8 +30,11 @@ botonCopiar.addEventListener('click', function() {
 // Evento para el botón de limpiar
 botonLimpiar.addEventListener('click', function() {
     textoEntrada.value = ''; // Limpiar el cuadro de entrada de texto
-    mensajeNoEncontrado.textContent = ''; // Limpiar el mensaje mostrado
+    mensajeNoEncontrado.textContent = 'Ningún mensaje fue encontrado'; // Restaurar el mensaje original
     imagen.classList.remove('oculto'); // Mostrar la imagen nuevamente (si es necesario)
+    mensajeNoEncontrado.classList.remove('oculto'); // Mostrar el mensaje nuevamente
+    const mensajeIngreso = document.querySelector('.ingresar-mensaje');
+    mensajeIngreso.classList.remove('oculto'); // Mostrar el mensaje de ingreso nuevamente
     window.scrollTo(0, 0); // Volver la página al principio
 });
 
