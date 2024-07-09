@@ -10,25 +10,25 @@ body {
     padding: 16px;
     background-color: #f0f4f8;
     height: 100%;
+    box-sizing: border-box;
 }
 
 header {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    padding: 10px 40px;
+    padding: 10px 20px;
     background-color: #f0f4f8;
 }
 
 .logo {
     width: 120px;
     height: 48px;
-    margin-top: 40px;
-    margin-left: 40px;
 }
 
 .contenedor {
     display: flex;
+    flex-direction: row;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,12 +38,13 @@ header {
     padding: 20px;
     box-sizing: border-box; 
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .seccion-izquierda, .seccion-derecha {
-    padding: 32px;
+    padding: 16px;
     width: 45%;
+    box-sizing: border-box;
 }
 
 .seccion-izquierda {
@@ -58,20 +59,46 @@ header {
     justify-content: center;
     align-items: center;
     color: #333;
-    gap: 24px;
+    gap: 16px;
 }
 
 textarea {
     width: 100%;
-    height: 520px;
+    height: 200px;
     border: none;
     border-radius: 4px;
-    padding: 16px;
+    padding: 8px;
     font-size: 16px;
     font-weight: 400;
     color: #0A3871;
     resize: none;
     box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 24px;
+    background-color: #0A3871;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:last-child {
+    background-color: #d0d8e2;
+    color: #0e000b;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.mensaje-no-encontrado {
+    font-size: 18px;
+    font-weight: 400;
+    color: #495057;
 }
 
 .nota {
@@ -81,60 +108,15 @@ textarea {
 }
 
 .contenedor-botones {
-    display: flex;       
-}
-
-button {
-    margin-right: 10px;
-    padding: 16px 24px;
-    width: 328px;
-    border: none;
-    border-radius: 24px;
-    background-color: #0A3871;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.seccion-derecha button:last-child {
-    background-color: #d0d8e2;
-    margin-right: 0;
-    color: #0e000b;
-}
-
-button:hover {
-    opacity: 0.5;
-    transition: ease-in .4s;
-}
-
-.mensaje-no-encontrado {
-    font-size: 24px;
-    font-weight: 400;
-    margin-top: 10px;
-    color: #495057;
-}
-
-.ingresar-mensaje {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-}
-
-#boton-copiar {
-    margin-bottom: 16px;
-    padding: 16px 24px;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#boton-copiar:hover {
-    opacity: 0.2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 footer {
     display: flex;
+    background-color: none;
     padding: 20px 0;
     text-align: center;
     gap: 32px;
@@ -146,6 +128,7 @@ footer {
 .social-icons {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .social-icons li {
@@ -155,7 +138,7 @@ footer {
 
 .social-icons li a {
     color: #333;
-    font-size: 48px;
+    font-size: 24px;
     transition: color 0.3s ease;
 }
 
@@ -163,76 +146,64 @@ footer {
     color: #007bff;
 }
 
-.oculto {
-    display: none;
+/*################# FORMATO PARA CELULARES ##############################*/
+
+@media (max-width: 375px) {
+    .contenedor {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .seccion-izquierda, .seccion-derecha {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        align-items: center;
+    }
+    .seccion-izquierda {
+        order: 1;
+    }
+    .seccion-derecha {
+        order: 2;
+    }
+    textarea {
+        height: 150px;
+    }
+    button {
+        width: 90%;
+    }
+    .nota {
+        font-size: 10px;
+    }
+    footer {
+        font-size: 12px;
+    }
+    .social-icons li a {
+        font-size: 20px;
+    }
 }
+
+/*################# FORMATO PARA TABLETAS ##############################*/
 
 @media (max-width: 768px) {
     .contenedor {
-        display: flex;
         flex-direction: column;
         width: 90%;
         padding: 10px;
         align-items: center;
     }
     .seccion-izquierda, .seccion-derecha {
-        border: none;
-        width: auto;
-        height: auto;
-        align-items: center;
-    }
-    button {
-        width: 150px;
-        gap: 16px;
-    }
-    .contenedor-botones {
-        display: flex;
-        padding: 10px;
-    }
-    body {
-        padding: 5px;
-    }
-    footer {
-        font-size: 10px;
-    }
-    .social-icons li a {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 375px) {
-    .contenedor {
-        display: block;
         width: 100%;
-        padding: 5px;
-    }
-    .contenedor-botones {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
-    }
-    .seccion-izquierda, .seccion-derecha {
+        padding: 10px;
         border: none;
-        width: auto;
-        height: auto;
-        align-items: center;
-    }
-    .seccion-derecha {
         align-items: center;
     }
     button {
-        width: 150px;
-        display: block;
-        gap: 16px;
-    }
-    body {
-        padding: 5px;
+        width: 90%;
     }
     footer {
-        font-size: 10px;
+        font-size: 12px;
     }
     .social-icons li a {
-        font-size: 32px;
+        font-size: 20px;
     }
 }
