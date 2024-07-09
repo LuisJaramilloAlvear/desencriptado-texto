@@ -41,6 +41,12 @@ header {
     align-items: flex-start;
 }
 
+/* Clase para ocultar elementos */
+.oculto {
+    display: none;
+}
+
+
 .seccion-izquierda, .seccion-derecha {
     padding: 16px;
     width: 45%;
