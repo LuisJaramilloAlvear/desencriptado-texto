@@ -1,7 +1,5 @@
-/* Importación de fuente */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-/* Estilos generales del cuerpo */
 body {
     font-family: "Inter", sans-serif;
     display: flex;
@@ -14,7 +12,6 @@ body {
     height: 100%;
 }
 
-/* Estilos del encabezado */
 header {
     width: 100%;
     display: flex;
@@ -30,7 +27,6 @@ header {
     margin-left: 40px;
 }
 
-/* Estilos del contenedor principal */
 .contenedor {
     display: flex;
     background: #fff;
@@ -38,9 +34,7 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     width: 100%;
-    height: 90hv;
     max-width: 90%;
-    margin-top: 20px;
     padding: 20px;
     box-sizing: border-box; 
     justify-content: space-between;
@@ -50,37 +44,30 @@ header {
 .seccion-izquierda, .seccion-derecha {
     padding: 32px;
     width: 45%;
-    height: auto;
-    
 }
 
 .seccion-izquierda {
-    
     border-right: 1px solid #e0e0e0;
     color: #0A3871;
 }
 
 .seccion-derecha {
-    
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #333;
-    height: 60vh;
     gap: 24px;
-
 }
 
-/* Estilos del textarea */
 textarea {
     width: 100%;
     height: 520px;
     border: none;
     border-radius: 4px;
     padding: 16px;
-    font-size: 32px;
+    font-size: 16px;
     font-weight: 400;
     color: #0A3871;
     resize: none;
@@ -97,7 +84,6 @@ textarea {
     display: flex;       
 }
 
-/* Estilos generales de los botones */
 button {
     margin-right: 10px;
     padding: 16px 24px;
@@ -108,44 +94,34 @@ button {
     color: #ffffff;
     cursor: pointer;
     font-size: 1rem;
-    
-    
 }
 
-/* Estilos del último botón en cualquier contenedor - Estilo del boton Copiar */
 .seccion-derecha button:last-child {
     background-color: #d0d8e2;
     margin-right: 0;
     color: #0e000b;
-
 }
 
 button:hover {
     opacity: 0.5;
     transition: ease-in .4s;
-    
-    
 }
 
-/* Estilos específicos de la sección derecha */
 .mensaje-no-encontrado {
     font-size: 24px;
     font-weight: 400;
     margin-top: 10px;
     color: #495057;
-    ;
 }
 
 .ingresar-mensaje {
     font-size: 16px;
     font-weight: 400;
     margin-top: 10px;
-    font-weight: 400;
 }
 
 #boton-copiar {
-    
-    margin-bottom: 16px; /* Espaciado uniforme hacia abajo */
+    margin-bottom: 16px;
     padding: 16px 24px;
     border: none;
     border-radius: 24px;
@@ -157,10 +133,8 @@ button:hover {
     opacity: 0.2;
 }
 
-/* Estilos del pie de página */
 footer {
     display: flex;
-    background-color: none;
     padding: 20px 0;
     text-align: center;
     gap: 32px;
@@ -186,59 +160,12 @@ footer {
 }
 
 .social-icons li a:hover {
-    color: #007bff; /* Color al pasar el mouse */
+    color: #007bff;
 }
 
-/* Clase para ocultar elementos */
 .oculto {
     display: none;
 }
-
-
-
-/*################# FORMATO PARA CELULARES ##############################*/
-
-@media (max-width: 375px) {
-    .contenedor {
-        display: block;
-        width: 100%;
-        padding: 5px;
-    }
-    .contenedor-botones{
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
-        justify-items: center;
-    }
-    .seccion-izquierda, .seccion-derecha {
-        border:none;
-        width: auto;
-        height: auto;
-        align-items: center;
-    }
-    .seccion-derecha{
-        align-items: center;
-    }
-
-    button {
-        width: 150px;
-        display: block;
-        gap: 16px;
-    }
-    body{
-        padding: 5px;
-    }
-    footer{
-        font-size: 10px;
-        .social-icons li a{
-            font-size: 32px;
-        }
-    }
-}
-
-
-/*################# FORMATO PARA TABLETAS ##############################*/
 
 @media (max-width: 768px) {
     .contenedor {
@@ -247,33 +174,65 @@ footer {
         width: 90%;
         padding: 10px;
         align-items: center;
-        
     }
     .seccion-izquierda, .seccion-derecha {
-        border:none;
+        border: none;
         width: auto;
         height: auto;
         align-items: center;
     }
-
     button {
         width: 150px;
         gap: 16px;
     }
-
-    .contenedor-botones{
+    .contenedor-botones {
         display: flex;
         padding: 10px;
-
     }
-
-    body{
+    body {
         padding: 5px;
     }
-    footer{
+    footer {
         font-size: 10px;
-        .social-icons li a{
-            font-size: 32px;
-        }
+    }
+    .social-icons li a {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 375px) {
+    .contenedor {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+    .contenedor-botones {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    .seccion-izquierda, .seccion-derecha {
+        border: none;
+        width: auto;
+        height: auto;
+        align-items: center;
+    }
+    .seccion-derecha {
+        align-items: center;
+    }
+    button {
+        width: 150px;
+        display: block;
+        gap: 16px;
+    }
+    body {
+        padding: 5px;
+    }
+    footer {
+        font-size: 10px;
+    }
+    .social-icons li a {
+        font-size: 32px;
     }
 }
