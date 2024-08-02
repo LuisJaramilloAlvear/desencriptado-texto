@@ -136,9 +136,15 @@ padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 16px;
     
     /* border: #000 solid 1px; */
 }
+
+.social-icons i {
+    font-size: 40px; /* Ajusta este valor al tamaño deseado */
+}
+
 
 .muneco {
     display: block;
