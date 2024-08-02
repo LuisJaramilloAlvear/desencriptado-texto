@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXX" crossorigin="anonymous" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desincriptador de Texto</title>
+    <title>Encriptador y desencriptador de Texto</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="assets/Logo.png" alt="Logo" class="logo">
-    </header>
-    <div class="contenedor">
-        <!--Aqui comienza la estructura del lado Izquierdo-->
-        <div class="seccion-izquierda">
-            <textarea id="texto-entrada" placeholder="Ingrese el texto aquí"></textarea>
-            <p class="nota"><i class="fas fa-exclamation-circle"></i> Solo letras minúsculas y sin acentos</p>
-            <div class="contenedor-botones">
-                <button id="boton-encriptar">Encriptar!</button>
-                <button id="boton-desencriptar">Desencriptar!</button>
-                <button id="boton-limpiar">Limpiar!</button>
-            </div>
-        </div>
-        <!--Aqui comienza la estructura del lado Derecho-->
-        <div class="seccion-derecha">
-            <img src="assets/Muneco.png" alt="Muñeco" id="imagen">
-            <p class="mensaje-no-encontrado">Ningún mensaje fue encontrado</p>
-            <p class="ingresar-mensaje">Ingresa el texto que desees encriptar o desencriptar.</p>
-            <button id="boton-copiar">Copiar</button>
-        </div>
-    </div>
+    <div class="container">
+        <header><img src="assets/Logo.png" alt=""></header>
+           
+        
+            <section> 
+                <textarea class="cuadroTexto" name="cuadroTexto" id="Ctext" placeholder="Ingrese Texto Aqui!"></textarea>
+                <p class="mensajeCuadro">Solo letras minúsculas y sin acentos</p>
+            
+                <div class="botones">
+                    <button>Encriptar</button>
+                    <button>Desencriptar</button>
+                    <button>Limpiar</button>
+                </div>
+            </section>
+        
+        <aside>
+            <img class="muneco" src="assets/Muneco.png" alt="Muñeco">
+            <p class="nmensaje">Ningún mensaje fue encontrado</p>
+            <p class="encripTexto">Ingresa el texto que desees encriptar o desencriptar.</p>
+            <button class="botonCopiar">Copiar</button>
+        </aside>
+        
+        <footer class="footer">
+            <p>| Luis Jaramillo Alvear | G7 - ONE | 2024</p>
+        </footer>
 
-    <footer class="footer">
-        <ul class="social-icons">
-            <li><a href="https://www.linkedin.com/in/luis-jaramillo-alvear/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-<!--      <li><a href="" target="_blank"><i class="fa-solid fa-briefcase"></i></a></li>  Aqui debe ir el portafolio bakan que realizare cuando termine el curso!! -->
-        </ul>
-        <p>| Luis Jaramillo Alvear | G7 - ONE | 2024</p>
-    </footer>
+
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

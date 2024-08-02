@@ -1,215 +1,198 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-body {
+body{
+    background: #F3F5FC;
     font-family: "Inter", sans-serif;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    grid-template-rows: 7rem 1fr 7rem;
+    padding: 32px 64px 8px  64px;    
+    grid-template-areas: 
+
+    "header header"
+    "secciones sidebar"
+    "footer footer"
+}
+
+
+
+
+/*#################### Seccion HEADER ################################################# */
+
+.container header{
+    grid-area: header;
+    background: #F3F5FC;
+    /* border: #000 solid 1px; */
+    align-content: center;
+}
+
+/*#################### Seccion Section #########################################3#####*/
+
+.container section{
+    grid-area: secciones;
+    background: #F3F5FC;
+    /* border: #000 solid 1px; */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0;
-    gap: 16px;
     padding: 16px;
-    background-color: #f0f4f8;
-    height: 100%;
-    box-sizing: border-box;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px 20px;
-    background-color: #f0f4f8;
-}
-
-.logo {
-    width: 120px;
-    height: 48px;
-}
-
-.contenedor {
-    display: flex;
-    flex-direction: row;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 100%;
-    max-width: 90%;
-    padding: 20px;
-    box-sizing: border-box; 
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-/* Clase para ocultar elementos */
-.oculto {
-    display: none;
-}
-
-
-.seccion-izquierda, .seccion-derecha {
-    padding: 16px;
-    width: 45%;
-    box-sizing: border-box;
-}
-
-.seccion-izquierda {
-    border-right: 1px solid #e0e0e0;
+.cuadroTexto{
+    min-height: 80%;
+    font-size: 32px;
+    font-weight: 400;
     color: #0A3871;
+    border: none;
+    background: #F3F5FC;    
 }
 
-.seccion-derecha {
-    text-align: center;
+.botones {
+display: flex;
+justify-content:center;
+justify-items: center;
+height: 67px;
+gap: 8px;
+padding: 8px;
+
+}
+
+.botones :hover{
+    background: #a2aac4;
+    color: #0A3871;
+    cursor: pointer;
+}
+
+.botones button {
+    flex: 1; /*Los botones ocuparán el mismo ancho disponible dentro del contenedor*/
+    max-width: 250px; /* Ajusta el valor máximo*/
+    background: #0A3871;
+    color: #F3F5FC;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 24px;
+    
+}
+
+
+.mensajeCuadro{
+    font-size: 12px;
+}
+
+/*###################### Seccion ASIDE #######################################################*/
+
+.container aside{
+    grid-area: sidebar;
+    background: #ffffff;
+    /* border: #000 solid 1px; */
+    border-radius: 16px;
+    box-shadow: 0px 24px 32px -8px #00000014;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #333;
-    gap: 16px;
+
 }
 
-textarea {
-    width: 100%;
-    height: 200px;
-    border: none;
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #0A3871;
-    resize: none;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 10px 20px;
-    width: 100%;
-    border: none;
-    border-radius: 24px;
-    background-color: #0A3871;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:last-child {
-    background-color: #d0d8e2;
-    color: #0e000b;
-}
-
-button:hover {
-    opacity: 0.7;
-}
-
-.mensaje-no-encontrado {
-    font-size: 18px;
-    font-weight: 400;
-    color: #495057;
-}
-
-.nota {
-    font-size: 12px;
-    color: #666;
-    margin-top: 10px;
-}
-
-.contenedor-botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-footer {
-    display: flex;
-    background-color: none;
-    padding: 20px 0;
-    text-align: center;
-    gap: 32px;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.social-icons {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-icons li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.social-icons li a {
-    color: #333;
+.nmensaje{
     font-size: 24px;
-    transition: color 0.3s ease;
+    font-weight: bolder;
+    color: #343A40;
+    text-shadow: 2px 5px 7px rgba(0,0,0,0.6);
 }
 
-.social-icons li a:hover {
-    color: #007bff;
+.encripTexto{
+    font-size: 16px;
+    font-weight: 400;
 }
 
-/*################# FORMATO PARA CELULARES ##############################*/
-
-@media (max-width: 375px) {
-    .contenedor {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .seccion-izquierda, .seccion-derecha {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        align-items: center;
-    }
-    .seccion-izquierda {
-        order: 1;
-    }
-    .seccion-derecha {
-        order: 2;
-    }
-    textarea {
-        height: 150px;
-    }
-    button {
-        width: 90%;
-    }
-    .nota {
-        font-size: 10px;
-    }
-    footer {
-        font-size: 12px;
-    }
-    .social-icons li a {
-        font-size: 20px;
-    }
+.botonCopiar{
+    height: 67px;
+    width: 250px;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 24px;
+    background: #0A3871;
+    color: #F3F5FC;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-/*################# FORMATO PARA TABLETAS ##############################*/
+.botonCopiar:hover{
+    background: #a2aac4;
+    color: #0A3871;
+    cursor: copy;
+}
+
+
+/*################## Seccion FOOTER ############################*/
+
+.container footer{
+    grid-area: footer;
+    background: #F3F5FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* border: #000 solid 1px; */
+}
+
+.muneco {
+    display: block;
+}
+
+/*########################################## RESPONSIVIDAD ####################################*/
 
 @media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column;
-        width: 90%;
-        padding: 10px;
-        align-items: center;
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 7rem 1fr auto 7rem;
+        grid-template-areas: 
+            "header"
+            "secciones"
+            "sidebar"
+            "footer";
     }
-    .seccion-izquierda, .seccion-derecha {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        align-items: center;
+
+    .muneco {
+        display: none;
     }
-    button {
-        width: 90%;
+}
+
+
+/* Media query para 378px - se ajusta desde 536px y se ve bien hasta 378px - */
+@media (max-width: 536px) {
+    .container {
+        padding: 16px 8px; 
+        grid-template-rows: 5rem 1fr auto 5rem;
     }
-    footer {
-        font-size: 12px;
+
+    header, section, aside, footer {
+        padding: 8px; 
     }
-    .social-icons li a {
-        font-size: 20px;
+
+    .cuadroTexto {
+        font-size: 24px; 
+    }
+
+    .botones button {
+        max-width: 100%; 
+        font-size: 14px; 
+    }
+
+    .botonCopiar {
+        width: 100%; 
+        font-size: 14px; 
+    }
+
+    .nmensaje {
+        font-size: 20px; 
+    }
+
+    .encripTexto {
+        font-size: 14px; 
     }
 }
