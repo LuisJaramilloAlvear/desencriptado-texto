@@ -142,9 +142,13 @@ padding: 8px;
 }
 
 .social-icons i {
-    font-size: 40px; /* Ajusta este valor al tamaño deseado */
+    font-size: 40px; 
+    color: #0A3871;/* Ajusta este valor al tamaño deseado */
 }
 
+.social-icons :hover{
+    color: #343A40;
+}
 
 .muneco {
     display: block;

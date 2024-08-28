@@ -10,6 +10,16 @@ const encripTexto = document.querySelector('.encripTexto');
 // Ocultar el botón copiar al cargar la página
 copiarBtn.style.display = 'none';
 
+// Función para validar el texto ingresado
+function validarTexto(texto) {
+    const regex = /^[a-z\s]+$/;
+    if (!regex.test(texto)) {
+        alert("Solo se permiten letras minúsculas sin acentos ni caracteres especiales.");
+        return false;
+    }
+    return true;
+}
+
 // Función para encriptar texto
 function encriptarTexto(texto) {
     let encriptado = texto.replace(/e/g, 'enter')
@@ -33,7 +43,7 @@ function desencriptarTexto(texto) {
 // Manejar el clic en el botón Encriptar
 encriptarBtn.addEventListener('click', () => {
     const texto = cuadroTexto.value;
-    if (texto) {
+    if (texto && validarTexto(texto)) {
         const textoEncriptado = encriptarTexto(texto);
         nmensaje.textContent = textoEncriptado;
         encripTexto.textContent = 'Texto encriptado:';
@@ -44,7 +54,7 @@ encriptarBtn.addEventListener('click', () => {
 // Manejar el clic en el botón Desencriptar
 desencriptarBtn.addEventListener('click', () => {
     const texto = cuadroTexto.value;
-    if (texto) {
+    if (texto && validarTexto(texto)) {
         const textoDesencriptado = desencriptarTexto(texto);
         nmensaje.textContent = textoDesencriptado;
         encripTexto.textContent = 'Texto desencriptado:';
